@@ -1,0 +1,87 @@
+<html>
+    <head></head>
+    <body>
+        <table  border="1" >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+        </table>
+        <script>
+            var people=[
+                {
+                    "name":"praveen",
+                    Age:36,
+                    Gender:"male",
+                    Salary:10000,
+                    City:"hyd",
+                },
+                {
+                    Name:"srikanth",
+                    Age:32,
+                    Gender:"male",
+                    Salary:20000,
+                    City:"bengaluru",
+                },
+                {
+                    Name:"pradeep",
+                    Age:21,
+                    Gender:"male",
+                    Salary:25000,
+                    City:"hyd",
+                },
+                {
+                    Name:"mounika",
+                    Age:20,
+                    Gender:"female",
+                    Salary:30000,
+                    City:"nalgonda",
+                },
+                {
+                    Name:"nikhil",
+                    Age:22,
+                    Gender:"male",
+                    Salary:2000,
+                    City:"guntur",
+                },
+                {
+                    Name:"riya",
+                    Age:14,
+                    Gender:"female",
+                    Salary:40000,
+                    City:"indore",
+                }];
+                var x=document.getElementById("tb");
+                people.forEach(function(p){
+                    var trow=document.createElement('tr');
+                    var td1=document.createElement('td');
+                    td1.innerHTML=p.Name;
+                    var td2=document.createElement('td');
+                    td2.innerHTML=p.Age;
+                    var td3=document.createElement('td');
+                    td3.innerHTML=p.Gender;
+                    if(td3.innerHTML==='female'){
+                        trow.style.backgroundColor="pink";
+                    }
+                    var td4=document.createElement('td');
+                    td4.innerHTML=p.Salary;
+                    var td5=document.createElement('td');
+                    td5.innerHTML=p.City;
+                    trow.appendChild(td1);
+                    trow.appendChild(td2);
+                    trow.appendChild(td3);
+                    trow.appendChild(td4);
+                    trow.appendChild(td5);
+                    x.appendChild(trow);   
+                });
+        </script>
+    </body>
+</html>

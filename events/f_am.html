@@ -1,0 +1,122 @@
+<html>
+  <head>
+    <style>
+        #t1,#t2{
+            margin-bottom: 50px;
+            margin-left:50px;
+        }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="event.preventDefault()" name="userform">
+      <label>firstname:</label>
+      <input type="text" id="fn" name="fname" />
+      <br />
+      <br />
+      <label>lastname:</label>
+      <input type="text" id="ln" name="lname" />
+      <br />
+      <br />
+      <label>age:</label>
+      <input type="text" id="db" name="age" />
+      <br />
+      <br />
+      <label for="">gender</label>
+      <select name="gender">
+        <option value="male">male</option>
+        <option value="female">female</option>
+        <option value="others">others</option>
+      </select><br><br>
+      <button onclick="print()">Save</button>
+    </form>
+    <table id="t1" border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>age</th>
+          <th>gender</th>
+        </tr>
+      </thead>
+      <tbody id="tb">
+        
+      </tbody>
+      <table id="t2" border="1">
+        <thead>
+          <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>age</th>
+            <th>gender</th>
+          </tr>
+        </thead>
+        <tbody id="tb1">
+          
+        </tbody>
+
+    </table>
+
+    <script>
+      var uf = document.userform;
+      var adult = [],minor=[];
+        function print() {
+        var uobj = {
+          "fisrtName": "",
+          "lastname": "",
+          "age": "",
+          "gender": "",
+        };
+        uobj.firstName = uf.fname.value;
+        uobj.lastname = uf.lname.value;
+        uobj.age = uf.age.value;
+        uobj.gender = uf.gender.value;
+        if(uobj.age>=18){
+            adult.push(uobj);
+            console.log(adult);
+            var trow = " ";
+        var x = document.getElementById("tb");
+        x.innerHTML = " ";
+        
+        adult.forEach(function(p) {
+          var trow = document.createElement("tr");
+          var td1 = document.createElement("td");
+          td1.innerHTML = p.firstName;
+          var td2 = document.createElement("td");
+          td2.innerHTML = p.lastname;
+          var td3 = document.createElement("td");
+          td3.innerHTML = p.age;
+          var td4 = document.createElement("td");
+          td4.innerHTML = p.gender;
+          trow.appendChild(td1);
+          trow.appendChild(td2);
+          trow.appendChild(td3);
+          trow.appendChild(td4);          
+          x.appendChild(trow);
+        });
+        }
+        else{
+            minor.push(uobj);
+            var trow = " ";
+        var y = document.getElementById("tb1");
+        y.innerHTML = " ";
+        minor.forEach(function(p) {
+          var trow = document.createElement("tr");
+          var td1 = document.createElement("td");
+          td1.innerHTML = p.firstName;
+          var td2 = document.createElement("td");
+          td2.innerHTML = p.lastname;
+          var td3 = document.createElement("td");
+          td3.innerHTML = p.age;
+          var td4 = document.createElement("td");
+          td4.innerHTML = p.gender;
+          trow.appendChild(td1);
+          trow.appendChild(td2);
+          trow.appendChild(td3);
+          trow.appendChild(td4);          
+          y.appendChild(trow);
+        });
+        }
+      }
+    </script>
+  </body>
+</html>

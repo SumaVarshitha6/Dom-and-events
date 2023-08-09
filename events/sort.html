@@ -1,0 +1,141 @@
+<html>
+  <head></head>
+  <body>
+    <form onsubmit="event.preventDefault()" name="userform">
+      <label>firstname:</label>
+      <input type="text" id="fn" name="fname" />
+      <br />
+      <br />
+      <label>lastname:</label>
+      <input type="text" id="ln" name="lname" />
+      <br />
+      <br />
+      <label>dob:</label>
+      <input type="date" id="db" name="dob" />
+      <br />
+      <br />
+      <label>email:</label>
+      <input type="email" id="em" name="emid" />
+      <br />
+      <br />
+      <label>gender</label>
+      <input type="radio" id="gender" name="gd" value="male" />male
+      <input type="radio" id="gender" name="gd" value="female" />female
+      <input type="radio" id="gender" name="gd" value="others" />others <br />
+      <br />
+      <label>languages :</label><br /><br />
+      <input
+        type="checkbox"
+        id="lan"
+        name="lang"
+        value="English"
+      />English<br />
+      <input type="checkbox" id="lan" name="lang" value="hindi" />hindi<br />
+      <input type="checkbox" id="lan" name="lang" value="telugu" />telugu<br />
+      <br />
+      <button onclick="print()">print</button>
+      <button onclick="sortAsc()">a-z</button>
+      <button onclick="sortdes()">z-a</button>
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>DOB</th>
+          <th>email</th>
+          <th>gender</th>
+          <th>languages</th>
+        </tr>
+      </thead>
+      <tbody id="tb">
+        
+      </tbody>
+    </table>
+
+    <script>
+      var uf = document.userform;
+      var users = [];
+      function print() {
+        var uobj = {
+          firstName: "",
+          lastname: "",
+          Dob: "",
+          email: "",
+          gender: "",
+          languages: [],
+        };
+        uobj.firstName = uf.fname.value;
+        uobj.lastname = uf.lname.value;
+        uobj.Dob = uf.dob.value;
+        uobj.email = uf.emid.value;
+        uobj.gender = uf.gd.value;
+        userform.lang.forEach(function (language) {
+          if (language.checked) {
+            uobj.languages.push(language.value);
+          }
+        });
+        users.push(uobj);
+        console.log(users);
+        createtable(users);
+    }
+    createtable(users);
+    function sortAsc(){
+         users.sort(function(a,b){
+                var f1=a.firstName.toLowerCase();
+                var f2=b.firstName.toLowerCase();
+                if(f1<f2){
+                    return -1;
+                }
+                if(f1>f2){
+                    return 1;
+                }
+                return 0;
+            });
+            createtable(users);
+        }
+        createtable(users);
+        function sortdes(){
+            users.sort(function(a,b){
+            var f1=a.firstName.toLowerCase();
+                var f2=b.firstName.toLowerCase();
+                if(f1<f2){
+                    return 1;
+                }
+                if(f1>f2){
+                    return -1;
+                }
+                return 0;
+            });
+            createtable(users);
+        }
+        function createtable(ar){
+        var trow = " ";
+        var x = document.getElementById("tb");
+        x.innerHTML = " ";
+        ar.forEach(function (p) {
+          var trow = document.createElement("tr");
+          var td1 = document.createElement("td");
+          td1.innerHTML = p.firstName;
+          var td2 = document.createElement("td");
+          td2.innerHTML = p.lastname;
+          var td3 = document.createElement("td");
+          td3.innerHTML = p.Dob;
+          var td4 = document.createElement("td");
+          td4.innerHTML = p.email;
+          var td5 = document.createElement("td");
+          td5.innerHTML = p.gender;
+          var td6 = document.createElement("td");
+          td6.innerHTML = p.languages;
+          trow.appendChild(td1);
+          trow.appendChild(td2);
+          trow.appendChild(td3);
+          trow.appendChild(td4);
+          trow.appendChild(td5);
+          trow.appendChild(td6);
+          x.appendChild(trow);
+        });
+     }
+    </script>
+  </body>
+</html>

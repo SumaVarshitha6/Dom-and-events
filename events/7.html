@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+            #d{
+                border: 1px solid black;
+                width: 200px;
+                height:100px;
+                margin-bottom:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="d">i'm something</div>
+        <button onclick="abc()">True/False</button>
+        <script>
+            var z=document.getElementById('d')
+            function abc(){
+                if(z.innerHTML==="i'm something"){
+                    document.getElementById('d').innerHTML=true;
+                }
+                else if(z.innerHTML==="false")
+                {
+                    document.getElementById('d').innerHTML="true";
+                } 
+                else if(z.innerHTML==="true")
+                {
+                    document.getElementById('d').innerHTML="false";
+                }     
+            }
+        </script>
+    </body>
+</html>

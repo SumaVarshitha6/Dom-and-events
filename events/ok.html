@@ -1,0 +1,142 @@
+<html>
+  <head>
+    <style>
+        #t1,#t2{
+            display: inline-block;
+            margin-left:50px;
+        }
+    </style>
+  </head>
+  <body>
+    <table id="t1" border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>age</th>
+          <th>gender</th>
+          <th>city</th>
+          <th>salary</th>
+        </tr>
+      </thead>
+      <tbody id="tb">  
+        
+      </tbody>
+      <table id="t2" border="1">
+        <thead>
+          <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>age</th>
+            <th>gender</th>
+            <th>city</th>
+            <th>salary</th>
+          </tr>
+        </thead>
+        <tbody id="tb1">
+          
+        </tbody>
+
+    </table>
+
+    <script>
+      var male = [],female=[];
+      var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }
+                        ];
+        if(people.gender==='male'){
+            male.push(people);
+            console.log(male);
+           var trow = " ";
+        var x = document.getElementById("tb");
+       // x.innerHTML = " ";
+        male.forEach(function(p) {
+          var trow = document.createElement("tr");
+          var td1 = document.createElement("td");
+          td1.innerHTML = p.firstName;
+          var td2 = document.createElement("td");
+          td2.innerHTML = p.lastname;
+          var td3 = document.createElement("td");
+          td3.innerHTML = p.age;
+          var td4 = document.createElement("td");
+          td4.innerHTML = p.gender;
+          trow.appendChild(td1);
+          trow.appendChild(td2);
+          trow.appendChild(td3);
+          trow.appendChild(td4);          
+          x.appendChild(trow);
+        });
+        }
+        else{
+            female.push(uobj);
+            var trow = " ";
+        var y = document.getElementById("tb1");
+        y.innerHTML = " ";
+        female.forEach(function(p) {
+          var trow = document.createElement("tr");
+          var td1 = document.createElement("td");
+          td1.innerHTML = p.firstName;
+          var td2 = document.createElement("td");
+          td2.innerHTML = p.lastname;
+          var td3 = document.createElement("td");
+          td3.innerHTML = p.age;
+          var td4 = document.createElement("td");
+          td4.innerHTML = p.gender;
+          trow.appendChild(td1);
+          trow.appendChild(td2);
+          trow.appendChild(td3);
+          trow.appendChild(td4);          
+          y.appendChild(trow);
+        });
+        }
+      
+    </script>
+  </body>
+</html> 

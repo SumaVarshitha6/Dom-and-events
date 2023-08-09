@@ -1,0 +1,153 @@
+<html>
+    <head></head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>firstname</th>
+                    <th>lastname</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>city</th>
+                    <th>salary</th>
+                </tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+        </table>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>firstname</th>
+                    <th>lastname</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>city</th>
+                    <th>salary</th>
+                </tr>
+            </thead>
+            <tbody id="tb1">
+
+            </tbody>
+        </table>
+        <script>
+            var people = [
+                        {
+                        "firstname": "praveen",
+                        "lastname": "gubbala",
+                        "age": 36,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 10000
+                        },
+                        {
+                        "firstname": "srikanth",
+                        "lastname": "gubbala",
+                        "age": 32,
+                        "gender": "male",
+                        "city": "bengaluru",
+                        "salary": 20000
+                        },
+                        {
+                        "firstname": "pradeep",
+                        "lastname": "reddy",
+                        "age": 21,
+                        "gender": "male",
+                        "city": "hyd",
+                        "salary": 25000
+                        },
+                        {
+                        "firstname": "mounika",
+                        "lastname": "mudiraj",
+                        "age": 20,
+                        "gender": "female",
+                        "city": "nalgonda",
+                        "salary": 30000
+                        },
+                        {
+                        "firstname": "nikhil",
+                        "lastname": "m",
+                        "age": 22,
+                        "gender": "male",
+                        "city": "guntur",
+                        "salary": 2000
+                        },
+                        {
+                        "firstname": "riya",
+                        "lastname": "bhadouria",
+                        "age": 14,
+                        "gender": "female",
+                        "city": "indore",
+                        "salary": 40000
+                        }];
+                        var male=[];
+                       for(var f in people){
+                        if(people[f].gender==='male'){
+                            male.push(people[f]);
+                        }
+                       }
+                       console.log(male);
+                       createtable(male);
+                       var female=[];
+                       for(var f in people){
+                        if(people[f].gender==='female'){
+                            female.push(people[f]);
+                        }
+                       }
+                       console.log(female);
+                       createtable1(female);
+                            
+                        function createtable(ar){
+                        var x=document.getElementById('tb');
+                        ar.forEach(function(p){
+                        var trow=document.createElement('tr');
+                        var td1=document.createElement('td');
+                        td1.innerHTML=p.firstname;
+                        var td2=document.createElement('td');
+                        td2.innerHTML=p.lastname;
+                        var td3=document.createElement('td');
+                        td3.innerHTML=p.age;
+                        var td4=document.createElement('td');
+                        td4.innerHTML=p.gender;
+                        var td5=document.createElement('td');
+                        td5.innerHTML=p.city;
+                        var td6=document.createElement('td');
+                        td6.innerHTML=p.salary;
+                        trow.appendChild(td1);
+                        trow.appendChild(td2);
+                        trow.appendChild(td3);
+                        trow.appendChild(td4);
+                        trow.appendChild(td5);
+                        trow.appendChild(td6);
+                        x.appendChild(trow);
+                        });
+                    }
+                        function createtable1(ar){
+                        var y=document.getElementById('tb1');
+                        ar.forEach(function(p){
+                        var trow=document.createElement('tr');
+                        var td1=document.createElement('td');
+                        td1.innerHTML=p.firstname;
+                        var td2=document.createElement('td');
+                        td2.innerHTML=p.lastname;
+                        var td3=document.createElement('td');
+                        td3.innerHTML=p.age;
+                        var td4=document.createElement('td');
+                        td4.innerHTML=p.gender;
+                        var td5=document.createElement('td');
+                        td5.innerHTML=p.city;
+                        var td6=document.createElement('td');
+                        td6.innerHTML=p.salary;
+                        trow.appendChild(td1);
+                        trow.appendChild(td2);
+                        trow.appendChild(td3);
+                        trow.appendChild(td4);
+                        trow.appendChild(td5);
+                        trow.appendChild(td6);
+                        y.appendChild(trow);
+                        });
+                    }
+        </script>
+    </body>
+</html>

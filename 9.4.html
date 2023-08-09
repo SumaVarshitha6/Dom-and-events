@@ -1,0 +1,142 @@
+<html>
+    <head></head>
+    <body>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>manufacturer</th>
+                    
+                </tr>
+            </thead>
+            <tbody id="tb">
+
+            </tbody>
+        </table>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>type</th>
+                    <th>price</th>
+                    <th>category</th>
+                    <th>manufacturer</th>
+                </tr>
+            </thead>
+            <tbody id="tb1">
+
+            </tbody>
+        </table>
+        <script>
+            var products = [
+			{
+				"name": "Duracell - AAA Batteries (4-Pack)",
+				"type": "HardGood",
+				"price": 5.49,
+				"category": "Household Batteries",
+				"manufacturer": "Duracell",				
+			},
+			{
+				"name": "Hard Rock TrackPak - Mac",
+				"type": "Software",
+				"price": 29.99,
+				"category": "Recording Equipment",
+				"manufacturer": "Hal Leonard",				
+			},
+			{
+				"name": "Duracell - AA 1.5V CopperTop Batteries (4-Pack)",
+				"type": "HardGood",
+				"price": 5.62,
+				"category": "Household Batteries",
+				"manufacturer": "Duracell",				
+			},
+			{
+				"name": "Energizer - MAX Batteries AA (4-Pack)",
+				"type": "HardGood",
+				"price": 5.32,
+				"category": "Household Batteries",
+				"manufacturer": "Energizer",				
+			},
+			{
+				"name": "METRA - Antenna Cable Adapter - Black",
+				"type": "HardGood",
+				"price": 13.99,
+				"category": "Antennas & Adapters",
+				"manufacturer": "Metra",				
+			},
+			{
+				"name": "WipeDrive Six - Mac|Windows",
+				"type": "Software",
+				"price": 23.99,
+				"category": "Maintenance Software",
+				"manufacturer": "White Canyon",				
+			}
+		];
+                        var hg=[];
+                       for(var f in products){
+                        if(products[f].type==='HardGood'){
+                            hg.push(products[f]);
+                        }
+                       }
+                       console.log(hg);
+                       createtable(hg);
+
+                       var sw=[];
+                       for(var f in products){
+                        if(products[f].type==='Software'){
+                            sw.push(products[f]);
+                        }
+                       }
+                       console.log(sw);
+                       createtable1(sw);
+                            
+                        function createtable(ar){
+                        var x=document.getElementById('tb');
+                        ar.forEach(function(p){
+                        var trow=document.createElement('tr');
+                        var td1=document.createElement('td');
+                        td1.innerHTML=p.name;
+                        var td2=document.createElement('td');
+                        td2.innerHTML=p.type;
+                        var td3=document.createElement('td');
+                        td3.innerHTML=p.price;
+                        var td4=document.createElement('td');
+                        td4.innerHTML=p.category;
+                        var td5=document.createElement('td');
+                        td5.innerHTML=p.manufacturer;
+                        trow.appendChild(td1);
+                        trow.appendChild(td2);
+                        trow.appendChild(td3);
+                        trow.appendChild(td4);
+                        trow.appendChild(td5);
+                        x.appendChild(trow);
+                        });
+                    }
+                        function createtable1(ar){
+                        var y=document.getElementById('tb1');
+                        ar.forEach(function(p){
+                        var trow=document.createElement('tr');
+                        var td1=document.createElement('td');
+                        td1.innerHTML=p.name;
+                        var td2=document.createElement('td');
+                        td2.innerHTML=p.type;
+                        var td3=document.createElement('td');
+                        td3.innerHTML=p.price;
+                        var td4=document.createElement('td');
+                        td4.innerHTML=p.category;
+                        var td5=document.createElement('td');
+                        td5.innerHTML=p.manufacturer;
+                        trow.appendChild(td1);
+                        trow.appendChild(td2);
+                        trow.appendChild(td3);
+                        trow.appendChild(td4);
+                        trow.appendChild(td5);
+                        y.appendChild(trow);
+                        });
+                    }
+        </script>
+    </body>
+</html>

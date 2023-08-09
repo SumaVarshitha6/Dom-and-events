@@ -1,0 +1,43 @@
+<html>
+    <head>
+       <style>
+        h1{
+            text-align: center;
+            color:red;
+        }
+        #d{
+            margin-bottom:30px;
+            background-color: green;
+           
+        }
+        #d1{
+            margin-bottom:30px;
+            background-color:red;
+        }
+        div{
+            display:inline-block;
+        }
+       </style> 
+    </head>
+    <body>
+        <h1>Like and Dislike buttons</h1>
+        <center><button id="d" onclick="abc()">Like</button>
+        <div id="h">0</div>
+        <center><button id="d1" onclick="abc1()">Dislike</button>
+        <div id="h1">0</div>
+        <script>
+            var z=document.getElementById('h')
+            var count=0;
+            function abc(){
+                count=count+1;
+                z.innerHTML=count;
+            }
+            var x=document.getElementById('h1')
+            var c=0;
+            function abc1(){
+                c=c+1;
+                x.innerHTML=c;
+            }
+        </script>
+    </body>
+</html>

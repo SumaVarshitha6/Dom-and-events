@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: rgb(238, 248, 200);
+            }
+            #d{
+                align-content: center;
+                border: 2px solid red;
+                width:150px;
+                height:200px;
+                margin: 30px 200px;
+                background-color: white;
+            }
+            #d1{
+                margin-left:250px;
+                background-color: orange;
+                border-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="color: red;text-align:center">Show bulb on/off image using toggle button</h1>
+        <img id="d" src="blboff.jpg"></img>
+        <button id="d1" onclick="bulb()">off</button>
+        <script>
+           function bulb(){
+                if(document.getElementById('d1').innerHTML==="off"){
+                    document.getElementById('d').src="blbon.jpg";
+                    document.getElementById('d1').innerHTML="on";
+                }
+                else{
+                    document.getElementById('d1').innerHTML="off";
+                    document.getElementById('d').src="blboff.jpg";
+                }       
+        } 
+        </script>
+    </body>
+</html>

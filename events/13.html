@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <style>
+            #p1,#p2,#p3,#p4,#p5{
+                display:inline-block;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="p1" onclick="s1()" src="star-fill.svg" style="margin-left: 555px;">
+        <img id="p2" onclick="s2()" src="star.svg">
+        <img id="p3" onclick="s3()" src="star.svg">
+        <img id="p4" onclick="s4()" src="star.svg">
+        <img id="p5" onclick="s5()" src="star.svg">
+        <h3 style="text-align:center;">Rating:</h3>
+        <h2  id="p6" style="text-align:center">1/5</h2>
+        <script>
+            
+           function s1(){
+            document.getElementById('p1').src="star-fill.svg";
+            document.getElementById('p2').src="star.svg";
+            document.getElementById('p3').src="star.svg";
+            document.getElementById('p4').src="star.svg";
+            document.getElementById('p5').src="star.svg";
+            var h2= document.getElementById('p6');
+            h2.innerHTML="1/5";
+           
+            }
+           function s2(){
+            document.getElementById('p1').src="star-fill.svg";
+            document.getElementById('p2').src="star-fill.svg";
+            document.getElementById('p3').src="star.svg";
+            document.getElementById('p4').src="star.svg";
+            document.getElementById('p5').src="star.svg";
+            var h2=document.getElementById('p6');
+            h2.innerHTML="2/5";
+           }
+           function s3(){
+            document.getElementById('p1').src="star-fill.svg";
+            document.getElementById('p2').src="star-fill.svg";
+            document.getElementById('p3').src="star-fill.svg";
+            document.getElementById('p4').src="star.svg";
+            document.getElementById('p5').src="star.svg";
+             var h2 = document.getElementById('p6');
+            h2.innerHTML="3/5";
+           }
+           function s4(){
+            document.getElementById('p1').src="star-fill.svg";
+            document.getElementById('p2').src="star-fill.svg";
+            document.getElementById('p3').src="star-fill.svg";
+            document.getElementById('p4').src="star-fill.svg";
+            document.getElementById('p5').src="star.svg";
+            var h2 = document.getElementById('p6');
+            h2.innerHTML="4/5";
+            }
+           function s5(){
+            document.getElementById('p1').src="star-fill.svg";
+            document.getElementById('p2').src="star-fill.svg";
+            document.getElementById('p3').src="star-fill.svg";
+            document.getElementById('p4').src="star-fill.svg";
+            document.getElementById('p5').src="star-fill.svg";
+            var h2=document.getElementById("p6")
+            h2.innerText="5/5";
+           }
+            
+        </script>
+    </body>
+</html>
