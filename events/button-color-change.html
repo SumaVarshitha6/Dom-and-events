@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <style>
+      #d {
+        margin: 0px 550px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: red; text-align: center">
+      Change button background color on click
+    </h1>
+    <button id="d" onclick="colorme()">white</button>
+
+    <script>
+      function colorme() {
+        if (document.getElementById("d").style.backgroundColor != "green") {
+          document.getElementById("d").style.backgroundColor = "green";
+          document.getElementById("d").innerHTML = "green";
+        } else {
+          document.getElementById("d").style.backgroundColor = "white";
+          document.getElementById("d").innerHTML = "white";
+        }
+      }
+    </script>
+  </body>
+</html>

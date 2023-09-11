@@ -1,54 +1,56 @@
 <html>
-    <head>
-        <style>
-            #d1,#d2{
-                text-align: center;
-            }
-            #b1{
-                margin-left: 530px;
-            }
-            div{
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <h1 id="d2"></h1>
-        <h1 id="d1"></h1>
-        <button id="b1" onclick="cin()">Check in</button>
-        <button onclick="cout()">Check Out</button>
-        <br><br>
-        <div>Total time::</div>
-        <br>
-        <div id="tt"> </div>
-        <script>
-            setInterval(function(){ 
-            var t=new Date();
-            document.getElementById('d2').innerHTML=t.getDate()+":"+t.getMonth()+":"+t.getFullYear();
-            document.getElementById('d1').innerHTML=t.getHours()+":"+t.getMinutes()+":"+t.getSeconds();
-        },100);
-        var cn,co,t1,t2,td=0;
-         function cin(){
-            t1=new Date();
-            cn=t1.getSeconds();        // console.log(cn);   
-           
-           document.getElementById('tt').innerHTML=" ";
-         }
-         function cout(){
-            t2=new Date();
-            co=t2.getSeconds();     //console.log(co); 
-         }
-            
-           
-               function ti(){
-                var s=t2.getSeconds()-t1.getSeconds();
-                td=td+s;
-                document.getElementById('tt').innerHTML=td;
-               }
-              
-        
-       
-        
-        </script>
-    </body>
+  <head>
+    <style>
+      #d1,
+      #d2 {
+        text-align: center;
+      }
+      #b1 {
+        margin-left: 530px;
+      }
+      div {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="d2"></h1>
+    <h1 id="d1"></h1>
+    <button id="b1" onclick="cin()">Check in</button>
+    <button onclick="cout()">Check Out</button>
+    <br /><br />
+    <div>Total time::</div>
+    <br />
+    <div id="tt"></div>
+    <script>
+      setInterval(function () {
+        var t = new Date();
+        document.getElementById("d2").innerHTML =
+          t.getDate() + ":" + t.getMonth() + ":" + t.getFullYear();
+        document.getElementById("d1").innerHTML =
+          t.getHours() + ":" + t.getMinutes() + ":" + t.getSeconds();
+      }, 100);
+      var cn,
+        co,
+        t1,
+        t2,
+        td = 0;
+      function cin() {
+        t1 = new Date();
+        cn = t1.getSeconds(); // console.log(cn);
+
+        document.getElementById("tt").innerHTML = " ";
+      }
+      function cout() {
+        t2 = new Date();
+        co = t2.getSeconds(); //console.log(co);
+      }
+
+      function ti() {
+        var s = t2.getSeconds() - t1.getSeconds();
+        td = td + s;
+        document.getElementById("tt").innerHTML = td;
+      }
+    </script>
+  </body>
 </html>

@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <style>
+      #p1,
+      #p2,
+      #p3 {
+        display: inline-block;
+        width: 20%;
+        height: 160px;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <img id="p1" onclick="pln1()" src="plane0.jpg" />
+      <img id="p2" onclick="pln2()" src="plane2.jpg" />
+      <img id="p3" onclick="pln3()" src="plane3.jpg" />
+    </center>
+    <center>
+      <img
+        id="p4"
+        style="margin: 20px 170px; width: 40%; height: 260px"
+        src="plane0.jpg"
+      />
+    </center>
+    <script>
+      function pln1() {
+        document.getElementById("p4").src = "plane0.jpg";
+      }
+      function pln2() {
+        document.getElementById("p4").src = "plane2.jpg";
+      }
+      function pln3() {
+        document.getElementById("p4").src = "plane3.jpg";
+      }
+    </script>
+  </body>
+</html>

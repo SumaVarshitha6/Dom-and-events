@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: rgb(238, 248, 200);
+      }
+    </style>
+  </head>
+  <body>
+    <input id="inputBox" type="text" />
+    <button onclick="addTask()">Add Student</button>
+    <ul id="ls"></ul>
+    <script>
+      var i = document.getElementById("inputBox");
+      var ls = document.getElementById("ls");
+
+      var task = [];
+      function addTask() {
+        task.push(inputBox.value);
+        ls.innerHTML = "";
+        task.forEach(function (t) {
+          var li = document.createElement("li");
+          li.innerHTML = t;
+          ls.appendChild(li);
+        });
+      }
+    </script>
+  </body>
+</html>
